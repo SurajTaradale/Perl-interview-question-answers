@@ -288,7 +288,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
     my $str4 = $str1 x 3;       # Repetition Output : Hello, Hello, Hello, 
 
   ```
-  <p>4. Comparison operators: Perl provides several comparison operators for scalar variables, including "==", "!=", "<", "<=", ">", and ">=".</p>
+  <p> 4. Comparison operators: Perl provides several comparison operators for scalar variables, including "==", "!=", "<", "<=", ">", and ">=".</p>
 
   <p>Example :</p>
   
@@ -302,9 +302,9 @@ Our Perl interview question and answer repository is a comprehensive collection 
     my $result4 = $a <= $b;     # Less than or equal to 
 
   ```
-  <p>5. Logical operators: Perl provides several logical operators for scalar variables, including "&&" (logical AND), "||" (logical OR), and "!" (logical NOT).</p>
+  <p> 5. Logical operators: Perl provides several logical operators for scalar variables, including "&&" (logical AND), "||" (logical OR), and "!" (logical NOT).</p>
 
-  <p>Example :</p>
+  <p>Example:</p>
   
   ```
     my $a = 10;
@@ -313,7 +313,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
     my $result1 = $a > $b && $a < 20;    # Logical AND
     my $result2 = $a < $b || $a == 10;   # Logical OR
     my $result3 = !($a == $b);           # Logical NOT
-
+    
   ```
 
 
@@ -321,106 +321,102 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
 <div class="common" id="que9" >
   <h3>9. What are the array methods in Perl?</h3>
-  <ol>
-    <li>push(): Adds one or more elements to the end of an array.</li>
-
-    ```
+    <p></p>
+    <p>1. push() Adds one or more elements to the end of an array.</p>
+  
+    
       my @fruits = ('apple', 'banana');
       push(@fruits, 'orange');
       print "@fruits"; # Output: apple banana orange
 
-    ```
-    <li>pop(): Removes and returns the last element of an array.</li>
+   
+   <p>2. pop(): Removes and returns the last element of an array.</p>
 
-    ```
+   
       my @fruits = ('apple', 'banana', 'orange');
       my $last_fruit = pop(@fruits);
       print "$last_fruit"; # Output: orange
 
-    ```
+    <p>3. shift(): Removes and returns the first element of an array.</p>
 
-    <li>shift(): Removes and returns the first element of an array.</li>
-
-    ```
       my @fruits = ('apple', 'banana', 'orange');
       my $first_fruit = shift(@fruits);
       print "$first_fruit"; # Output: apple
 
-    ```
-    <li>unshift(): Adds one or more elements to the beginning of an array.</li>
+    <p>4. unshift(): Adds one or more elements to the beginning of an array.</p>
 
-    ```
+   
       my @fruits = ('banana', 'orange');
       unshift(@fruits, 'apple');
       print "@fruits"; # Output: apple banana orange
 
-    ```
-    <li>splice(): Removes or replaces a portion of an array.</li>
+ 
+    <p>5. splice(): Removes or replaces a portion of an array.</p>
 
-    ```
+    
       my @fruits = ('apple', 'banana', 'orange', 'grape', 'kiwi');
       splice(@fruits, 2, 2, 'pear', 'peach');
       print "@fruits"; # Output: apple banana pear peach kiwi
 
-    ```
-    <li>join(): Concatenates the elements of an array into a single string, using a specified delimiter.</li>
+  
+    <p>6. join(): Concatenates the elements of an array into a single string, using a specified delimiter.</p>
 
-    ```
+   
       my @fruits = ('apple', 'banana', 'orange');
       my $fruits_string = join(', ', @fruits);
       print "$fruits_string"; # Output: apple, banana, orange
 
-    ```
+    
 
-    <li>split(): Splits a string into an array, using a specified delimiter.</li>
+    <p>7. split(): Splits a string into an array, using a specified delimiter.</p>
 
-    ```
+   
       my $fruits_string = 'apple, banana, orange';
       my @fruits = split(', ', $fruits_string);
       print "@fruits"; # Output: apple banana orange
 
-    ```
-    <li>sort(): Sorts the elements of an array in ascending order.</li>
+   
+    <p>8. sort(): Sorts the elements of an array in ascending order.</p>
 
-    ```
+
       my @fruits = ('banana', 'orange', 'apple');
       my @sorted_fruits = sort(@fruits);
       print "@sorted_fruits"; # Output: apple banana orange
 
-    ```
-    <li>reverse(): Reverses the order of elements in an array.</li>
+    
+    <p>9. reverse(): Reverses the order of elements in an array.</p>
 
-    ```
+
       my @fruits = ('apple', 'banana', 'orange');
       my @reversed_fruits = reverse(@fruits);
       print "@reversed_fruits"; # Output: orange banana apple
 
-    ```
-    <li>grep(): Returns a list of all elements in an array that match a specified condition.</li>
+   
+    <p>10. grep(): Returns a list of all elements in an array that match a specified condition.</p>
 
-    ```
+    
       my @fruits = ('apple', 'banana', 'orange', 'pear', 'peach');
       my @selected_fruits = grep(/p/, @fruits);
       print "@selected_fruits"; # Output: apple grape peach
 
-    ```
-    <li>map(): Returns a new list of elements that result from applying a function to each element in an array.</li>
+    
+    <p>11. map(): Returns a new list of elements that result from applying a function to each element in an array.</p>
 
-    ```
+    
       my @fruits = ('apple', 'banana', 'orange');
       my @uppercase_fruits = map(uc, @fruits);
       print "@uppercase_fruits"; # Output: APPLE BANANA ORANGE
 
-    ```
-    <li>slice(): Returns a specified portion of an array as a new array.</li>
+    
+    <p>12. slice(): Returns a specified portion of an array as a new array.</p>
 
-    ```
+    
       my @fruits = ('apple', 'banana', 'orange', 'pear', 'peach');
       my @selected_fruits = @fruits[1..3];
       print "@selected_fruits"; # Output: banana orange pear
 
-    ```
-  </ol>
+   
+
 </div>
 <div class="common" id="que10" >
   <h3>10. How can you reset the starting index of an array in Perl?</h3>
@@ -564,12 +560,11 @@ Our Perl interview question and answer repository is a comprehensive collection 
     }
 
   ```
-<p>Output:</p>
+  <p>Output:</p>
 
-    ```
+   
     After deleting 'age':
     name => John Smith
     city => New York
 
-    ```
 </div>
