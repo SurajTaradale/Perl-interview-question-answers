@@ -36,6 +36,10 @@ Our Perl interview question and answer repository is a comprehensive collection 
       <th >7</th>
       <td><a href="#que7">Can you explain the array data type in Perl?</a></td>
     </tr>
+    <tr>
+      <th >8</th>
+      <td><a href="#que8">What are some scalar datatype operations in Perl?</a></td>
+    </tr>
     </tbody>
 </table>
 <div class="common" id="que1" >
@@ -210,5 +214,75 @@ Our Perl interview question and answer repository is a comprehensive collection 
     $numbers[2] = $numbers[2] + 1;   # Increments the value of the third element of the array by 1
     $numbers[4] = "five";  # Assigns the string "five" to the fifth element of the array
   ```
+
+</div>
+<div class="common" id="que8" >
+  <h3>8. What are some scalar datatype operations in Perl?</h3>
+  <p>Here are some of the most common scalar datatype operations in Perl:</p>
+
+  <p>1. Assignment: The assignment operator "=" is used to assign a value to a scalar variable.</p>
+
+  <p>Example :</p>
+  
+  ```
+    my $num = 10;
+    my $str = "Hello, world!";
+
+  ```  
+  <p>2. Arithmetic operators: Perl provides a variety of arithmetic operators for scalar variables, including "+", "-", "*", "/", and "%".</p>
+
+  <p>Example :</p>
+  
+  ```
+    my $a = 10;
+    my $b = 5;
+
+    my $sum = $a + $b;
+    my $diff = $a - $b;
+    my $prod = $a * $b;
+    my $quot = $a / $b;
+    my $mod = $a % $b;
+
+  ``` 
+  <p>3. String operators: Perl provides several operators for working with strings, including concatenation (".") and repetition ("x").</p>
+
+  <p>Example :</p>
+  
+  ```
+    my $str1 = "Hello, ";
+    my $str2 = "world!";
+
+    my $str3 = $str1 . $str2;   # Concatenation, Output : Hello, world!
+    my $str4 = $str1 x 3;       # Repetition Output : Hello, Hello, Hello, 
+
+  ```
+  <p>4. Comparison operators: Perl provides several comparison operators for scalar variables, including "==", "!=", "<", "<=", ">", and ">=".</p>
+
+  <p>Example :</p>
+  
+  ```
+    my $a = 10;
+    my $b = 5;
+
+    my $result1 = $a == $b;     # Equality
+    my $result2 = $a != $b;     # Inequality
+    my $result3 = $a > $b;      # Greater than
+    my $result4 = $a <= $b;     # Less than or equal to 
+
+  ```
+  <p>5. Logical operators: Perl provides several logical operators for scalar variables, including "&&" (logical AND), "||" (logical OR), and "!" (logical NOT).</p>
+
+  <p>Example :</p>
+  
+  ```
+    my $a = 10;
+    my $b = 5;
+
+    my $result1 = $a > $b && $a < 20;    # Logical AND
+    my $result2 = $a < $b || $a == 10;   # Logical OR
+    my $result3 = !($a == $b);           # Logical NOT
+
+  ```
+
 
 </div>
