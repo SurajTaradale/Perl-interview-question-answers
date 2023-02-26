@@ -40,6 +40,38 @@ Our Perl interview question and answer repository is a comprehensive collection 
       <th >8</th>
       <td><a href="#que8">What are some scalar datatype operations in Perl?</a></td>
     </tr>
+    <tr>
+      <th >9</th>
+      <td><a href="#que9">What are the array methods in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >10</th>
+      <td><a href="#que10">How can you reset the starting index of an array in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >11</th>
+      <td><a href="#que11">What is the difference between chop and chomp in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >12</th>
+      <td><a href="#que12">How can you retrieve only values from a hash in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >13</th>
+      <td><a href="#que13">How can you retrieve only keys from a hash in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >14</th>
+      <td><a href="#que14">How can you check if a key exists or not in a hash in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >15</th>
+      <td><a href="#que15">How can you check the size of a hash in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >16</th>
+      <td><a href="#que16">How can you delete keys from a hash in Perl?</a></td>
+    </tr>
     </tbody>
 </table>
 <div class="common" id="que1" >
@@ -285,4 +317,259 @@ Our Perl interview question and answer repository is a comprehensive collection 
   ```
 
 
+</div>
+
+<div class="common" id="que9" >
+  <h3>9. What are the array methods in Perl?</h3>
+  <ol>
+    <li>push(): Adds one or more elements to the end of an array.</li>
+
+    ```
+      my @fruits = ('apple', 'banana');
+      push(@fruits, 'orange');
+      print "@fruits"; # Output: apple banana orange
+
+    ```
+    <li>pop(): Removes and returns the last element of an array.</li>
+
+    ```
+      my @fruits = ('apple', 'banana', 'orange');
+      my $last_fruit = pop(@fruits);
+      print "$last_fruit"; # Output: orange
+
+    ```
+
+    <li>shift(): Removes and returns the first element of an array.</li>
+
+    ```
+      my @fruits = ('apple', 'banana', 'orange');
+      my $first_fruit = shift(@fruits);
+      print "$first_fruit"; # Output: apple
+
+    ```
+    <li>unshift(): Adds one or more elements to the beginning of an array.</li>
+
+    ```
+      my @fruits = ('banana', 'orange');
+      unshift(@fruits, 'apple');
+      print "@fruits"; # Output: apple banana orange
+
+    ```
+    <li>splice(): Removes or replaces a portion of an array.</li>
+
+    ```
+      my @fruits = ('apple', 'banana', 'orange', 'grape', 'kiwi');
+      splice(@fruits, 2, 2, 'pear', 'peach');
+      print "@fruits"; # Output: apple banana pear peach kiwi
+
+    ```
+    <li>join(): Concatenates the elements of an array into a single string, using a specified delimiter.</li>
+
+    ```
+      my @fruits = ('apple', 'banana', 'orange');
+      my $fruits_string = join(', ', @fruits);
+      print "$fruits_string"; # Output: apple, banana, orange
+
+    ```
+
+    <li>split(): Splits a string into an array, using a specified delimiter.</li>
+
+    ```
+      my $fruits_string = 'apple, banana, orange';
+      my @fruits = split(', ', $fruits_string);
+      print "@fruits"; # Output: apple banana orange
+
+    ```
+    <li>sort(): Sorts the elements of an array in ascending order.</li>
+
+    ```
+      my @fruits = ('banana', 'orange', 'apple');
+      my @sorted_fruits = sort(@fruits);
+      print "@sorted_fruits"; # Output: apple banana orange
+
+    ```
+    <li>reverse(): Reverses the order of elements in an array.</li>
+
+    ```
+      my @fruits = ('apple', 'banana', 'orange');
+      my @reversed_fruits = reverse(@fruits);
+      print "@reversed_fruits"; # Output: orange banana apple
+
+    ```
+    <li>grep(): Returns a list of all elements in an array that match a specified condition.</li>
+
+    ```
+      my @fruits = ('apple', 'banana', 'orange', 'pear', 'peach');
+      my @selected_fruits = grep(/p/, @fruits);
+      print "@selected_fruits"; # Output: apple grape peach
+
+    ```
+    <li>map(): Returns a new list of elements that result from applying a function to each element in an array.</li>
+
+    ```
+      my @fruits = ('apple', 'banana', 'orange');
+      my @uppercase_fruits = map(uc, @fruits);
+      print "@uppercase_fruits"; # Output: APPLE BANANA ORANGE
+
+    ```
+    <li>slice(): Returns a specified portion of an array as a new array.</li>
+
+    ```
+      my @fruits = ('apple', 'banana', 'orange', 'pear', 'peach');
+      my @selected_fruits = @fruits[1..3];
+      print "@selected_fruits"; # Output: banana orange pear
+
+    ```
+  </ol>
+</div>
+<div class="common" id="que10" >
+  <h3>10. How can you reset the starting index of an array in Perl?</h3>
+  <p>In Perl, you can reset the starting index of an array by changing the value of the $[ variable. By default, the starting index of arrays in Perl is 0, but you can change it to any integer value.</p>
+  <p>However, it is not recommended to use `$[` in modern Perl programming because it can cause confusion and make code harder to maintain. Instead, you can use the use feature 'array_base'; pragma to set the starting index of arrays in a Perl script.</p>
+  <p>Here's an example of how to reset the starting index of an array to 1 in Perl:</p>
+
+  ```
+    use feature 'array_base';
+    $[ = 1; # set starting index of arrays to 1
+
+    my @fruits = ('apple', 'banana', 'orange');
+    print "$fruits[1]\n"; # Output: apple
+    print "$fruits[2]\n"; # Output: banana
+    print "$fruits[3]\n"; # Output: orange
+
+  ```
+
+</div>
+<div class="common" id="que11" >
+  <h3>11. What is the difference between chop and chomp in Perl?</h3>
+  <p>chop and chomp are two Perl built-in functions that are used to remove characters from the end of a string. However, there is a difference in how they work.</p>
+  <h5>chop:</h5>
+  <p>chop removes the last character of a string, regardless of what it is. It modifies the string in place and returns the character that was removed.</p>
+
+  <p>Example</p>
+
+  ```
+    my $string = "hello";
+    my $last_char = chop($string);
+    print "$string\n";     # Output: hell
+    print "$last_char\n";  # Output: o
+
+  ```
+  <p>In this example, we use chop to remove the last character 'o' from the string "hello". The chop function modifies the string in place and returns the character that was removed, which is then printed to the screen.</p>
+
+   <h5>chomp:</h5>
+   <p>chomp, on the other hand, is used to remove the newline character(s) from the end of a string. It only removes the newline character(s) that appear at the end of the string, and leaves any other characters intact. Here's an example:</p>
+
+   ```
+      my $string = "hello\n";
+      chomp($string);
+      print "$string";   # Output: hello
+
+   ```
+   <p>In this example, we use chomp to remove the newline character \n from the end of the string "hello\n". The chomp function removes the newline character and modifies the string in place.</p>
+</div>
+
+<div class="common" id="que12" >
+  <h3>12. How can you retrieve only values from a hash in Perl?</h3>
+  <p>To retrieve only the values from a hash in Perl, you can use the values function. The values function returns a list of all the values in the hash.</p>
+
+  ```
+      my %person = (
+          "name" => "John Smith",
+          "age"  => 30,
+          "city" => "New York"
+      );
+
+      my @values = values %person;  # Retrieve all values from hash
+
+      print "Values: @values\n";
+
+  ```
+</div>
+
+<div class="common" id="que13" >
+  <h3>13. How can you retrieve only keys from a hash in Perl?</h3>
+  <p>To retrieve only the keys from a hash in Perl, you can use the keys function. The keys function returns a list of all the keys in the hash.</p>
+
+  ```
+      my %person = (
+          "name" => "John Smith",
+          "age"  => 30,
+          "city" => "New York"
+      );
+
+      my @keys = keys %person;  # Retrieve all keys from hash
+
+      print "Keys: @keys\n";
+
+  ```
+
+</div>
+
+<div class="common" id="que14" >
+  <h3>14. How can you check if a key exists or not in a hash in Perl?</h3>
+  <p>To check if a key exists or not in a hash in Perl, you can use the exists function. The exists function returns a true value if the specified key exists in the hash and a false value otherwise.</p>
+
+  ```
+    my %person = (
+        "name" => "John Smith",
+        "age"  => 30,
+        "city" => "New York"
+    );
+
+    if (exists $person{"name"}) {
+        print "Name exists in hash\n";
+    } else {
+        print "Name does not exist in hash\n";
+    }
+
+  ```
+
+</div>
+
+<div class="common" id="que15" >
+  <h3>15. How can you check the size of a hash in Perl?</h3>
+  <p>In Perl, you can use the scalar function to get the size of a hash. When used with a hash variable, the scalar function returns the number of key-value pairs in the hash.</p>
+
+  ```
+    my %person = (
+        "name" => "John Smith",
+        "age"  => 30,
+        "city" => "New York"
+    );
+
+    my $size = scalar %person;  # Get size of hash
+
+    print "Size of hash: $size\n"; #output: Size of hash: 3
+
+  ```
+
+</div>
+<div class="common" id="que16" >
+  <h3>16. How can you delete keys from a hash in Perl?</h3>
+  <p>In Perl, you can use the delete function to remove a key-value pair from a hash. The delete function takes the hash and the key as arguments and returns the value associated with the deleted key.</p>
+
+  ```
+    my %person = (
+        "name" => "John Smith",
+        "age"  => 30,
+        "city" => "New York"
+    );
+
+    delete $person{"age"};  # Delete key "age"
+
+    print "After deleting 'age':\n";
+    while (my ($key, $value) = each %person) {
+        print "$key => $value\n";
+    }
+
+  ```
+<p>Output:</p>
+
+    ```
+    After deleting 'age':
+    name => John Smith
+    city => New York
+
+    ```
 </div>
