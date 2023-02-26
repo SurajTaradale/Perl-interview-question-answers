@@ -36,7 +36,6 @@ Our Perl interview question and answer repository is a comprehensive collection 
       <th >7</th>
       <td><a href="#que7">Can you explain the array data type in Perl?</a></td>
     </tr>
-
     </tbody>
 </table>
 <div class="common" id="que1" >
@@ -51,13 +50,15 @@ Our Perl interview question and answer repository is a comprehensive collection 
   <h3>2. How do you comment a single or multiple lines of code in Perl?</h3>
   <p>In Perl, you can comment a single line of code by starting the line with the '#' character.</p>
   <p>Example :</p>
+  
   ```
     # This is a comment in Perl
     print "Hello, World!\n"; # This line prints "Hello, World!"
   ```
-  <br/>
+
   <p>To comment multiple lines of code, you can use the =head and =cut directives to create a block of documentation. Any code between these directives will be ignored by the interpreter.</p>
   <p>Example :</p>
+  
   ```
     =head
     print "Welcome\n";
@@ -71,10 +72,12 @@ Our Perl interview question and answer repository is a comprehensive collection 
   <p>Single quotes</p>
   <p>Single quotes are not interpolated string literals, meaning that they lose their meaning.</p>
   <p>Example :</p>
+  
   ```
     my $value = 45;
     print 'The value is $value \n';
   ```
+  
   ```
     #output
     The value is $value #it will not print the 45 beacuse it lose their meaning.
@@ -83,10 +86,12 @@ Our Perl interview question and answer repository is a comprehensive collection 
   <p>Double quotes</p>
   <p>Double quotes are interpolated string literals, meaning that they not lose their meaning.</p>
   <p>Example :</p>
+  
   ```
     my $value = 45;
     print "The value is $value \n";
   ```
+  
   ```
     #output
     The value is 45 #it will print the 45 beacuse it not lose their meaning.
@@ -94,10 +99,12 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
   <p>In double quotes we need to lose the meaning then use black slash (\)</p>
   <p>Example :</p>
+  
   ```
     my $value = 45;
     print 'The value is \$value'
   ```
+  
   ```
     #output
     The value is $value #it will not print the 45 beacuse it lose their meaning.
@@ -118,22 +125,23 @@ Our Perl interview question and answer repository is a comprehensive collection 
   <p>scalars are variables that can hold a single value of various data types, including numbers, strings, booleans, and undefined values. They are declared using the $ symbol followed by the variable name and can be assigned and accessed using standard variable assignment and access syntax.</p>
 
   <p>Example :</p>
+  
   ```
     my $name = "Suraj";  # Declares a scalar variable named $name with the value "Alice"
     my $age = 24;        # Declares a scalar variable named $age with the value 30
     my $is_developer = 1;  # Declares a scalar variable named $is_student with the value 1 (true)
     my $address;         # Declares a scalar variable named $address with an undefined value
-
   ```
   <p>You can assign a value to a scalar variable using the assignment operator " = "</p>
   <p>Example :</p>
+  
   ```
     $name = "Vijay";      # Assigns the value "Vijay" to the $name variable
     $age = $age + 1;    # Increments the value of $age by 1
     $is_developer = 0;    # Assigns the value 0 (false) to $is_student
-
   ```
   <p>You can access the value of a scalar variable by simply using its name.</p>
+  
   ```
     print $name;      # Prints the value of $name (currently "Bob")
     print $age;       # Prints the value of $age (currently 31)
@@ -147,13 +155,13 @@ Our Perl interview question and answer repository is a comprehensive collection 
   <p>Hashes are declared using the % symbol followed by the variable name</p>
 
   <p>Example :</p>
+  
   ```
     my %person = (
       "name" => "Suraj",
       "age" => 24,
       "is_developer" => 1
     );
-
   ```
   <p>In this example, we have declared a hash named %person with three keys ("name", "age", and "is_student"), each of which corresponds to a value.</p>
   <p>You can access the value of a hash element using the key name in square brackets</p>
@@ -166,6 +174,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
   ```
 
   <p>You can also assign a new value to a hash element using the key name and the assignment operator '='.</p>
+  
   ```
     $person{"name"} = "Bob";      # Assigns the value "Bob" to the "name" key
     $person{"age"} = $person{"age"} + 1;  # Increments the value of the "age" key by 1
@@ -179,6 +188,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
   <p>Arrays are declared using the @ symbol followed by the variable name.</p>
 
   <p>Example :</p>
+  
   ```
     my @numbers = (1, 2, 3, 4, 5);
 
@@ -194,6 +204,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
   ```
 
   <p>You can also assign a new value to an array element using the numeric index and the assignment operator '='.</p>
+  
   ```
     $numbers[0] = 10;     # Assigns the value 10 to the first element of the array
     $numbers[2] = $numbers[2] + 1;   # Increments the value of the third element of the array by 1
