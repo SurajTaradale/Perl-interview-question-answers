@@ -72,6 +72,10 @@ Our Perl interview question and answer repository is a comprehensive collection 
       <th >16</th>
       <td><a href="#que16">How can you delete keys from a hash in Perl?</a></td>
     </tr>
+    <tr>
+      <th >17</th>
+      <td><a href="#que17">How can you delete the last character from all the elements in an array in Perl?</a></td>
+    </tr>
     </tbody>
 </table>
 <div class="common" id="que1" >
@@ -569,4 +573,15 @@ Our Perl interview question and answer repository is a comprehensive collection 
     name => John Smith
     city => New York
 
+</div>
+<div class="common" id="que17" >
+<h3>17. How can you delete the last character from all the elements in an array in Perl?</h3>
+  
+  ```
+  my @array = ("apple", "banana", "cherry");
+  chop(@array);
+  print "@array\n"; #output: appl banan cherr
+  
+  ```
+  <p>In the above example deleted all the last letters.
 </div>
