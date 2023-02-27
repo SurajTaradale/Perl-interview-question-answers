@@ -322,7 +322,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
 <div class="common" id="que9" >
   <h3>9. What are the array methods in Perl?</h3>
     <p></p>
-    <p>1. push() Adds one or more elements to the end of an array.</p>
+<p>1. push() Adds one or more elements to the end of an array.</p>
   
     
       my @fruits = ('apple', 'banana');
@@ -330,28 +330,30 @@ Our Perl interview question and answer repository is a comprehensive collection 
       print "@fruits"; # Output: apple banana orange
 
    
-   <p>2. pop(): Removes and returns the last element of an array.</p>
+<p>2. pop(): Removes and returns the last element of an array.</p>
 
    
       my @fruits = ('apple', 'banana', 'orange');
       my $last_fruit = pop(@fruits);
       print "$last_fruit"; # Output: orange
 
-    <p>3. shift(): Removes and returns the first element of an array.</p>
+<p>3. shift(): Removes and returns the first element of an array.</p>
 
+   
       my @fruits = ('apple', 'banana', 'orange');
       my $first_fruit = shift(@fruits);
       print "$first_fruit"; # Output: apple
 
-    <p>4. unshift(): Adds one or more elements to the beginning of an array.</p>
+   
+<p>4. unshift(): Adds one or more elements to the beginning of an array.</p>
 
    
       my @fruits = ('banana', 'orange');
       unshift(@fruits, 'apple');
       print "@fruits"; # Output: apple banana orange
 
- 
-    <p>5. splice(): Removes or replaces a portion of an array.</p>
+   
+ <p>5. splice(): Removes or replaces a portion of an array.</p>
 
     
       my @fruits = ('apple', 'banana', 'orange', 'grape', 'kiwi');
@@ -359,7 +361,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
       print "@fruits"; # Output: apple banana pear peach kiwi
 
   
-    <p>6. join(): Concatenates the elements of an array into a single string, using a specified delimiter.</p>
+ <p>6. join(): Concatenates the elements of an array into a single string, using a specified delimiter.</p>
 
    
       my @fruits = ('apple', 'banana', 'orange');
@@ -368,7 +370,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
     
 
-    <p>7. split(): Splits a string into an array, using a specified delimiter.</p>
+<p>7. split(): Splits a string into an array, using a specified delimiter.</p>
 
    
       my $fruits_string = 'apple, banana, orange';
@@ -376,7 +378,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
       print "@fruits"; # Output: apple banana orange
 
    
-    <p>8. sort(): Sorts the elements of an array in ascending order.</p>
+<p>8. sort(): Sorts the elements of an array in ascending order.</p>
 
 
       my @fruits = ('banana', 'orange', 'apple');
@@ -384,7 +386,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
       print "@sorted_fruits"; # Output: apple banana orange
 
     
-    <p>9. reverse(): Reverses the order of elements in an array.</p>
+<p>9. reverse(): Reverses the order of elements in an array.</p>
 
 
       my @fruits = ('apple', 'banana', 'orange');
@@ -392,7 +394,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
       print "@reversed_fruits"; # Output: orange banana apple
 
    
-    <p>10. grep(): Returns a list of all elements in an array that match a specified condition.</p>
+<p>10. grep(): Returns a list of all elements in an array that match a specified condition.</p>
 
     
       my @fruits = ('apple', 'banana', 'orange', 'pear', 'peach');
@@ -400,7 +402,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
       print "@selected_fruits"; # Output: apple grape peach
 
     
-    <p>11. map(): Returns a new list of elements that result from applying a function to each element in an array.</p>
+<p>11. map(): Returns a new list of elements that result from applying a function to each element in an array.</p>
 
     
       my @fruits = ('apple', 'banana', 'orange');
@@ -408,7 +410,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
       print "@uppercase_fruits"; # Output: APPLE BANANA ORANGE
 
     
-    <p>12. slice(): Returns a specified portion of an array as a new array.</p>
+<p>12. slice(): Returns a specified portion of an array as a new array.</p>
 
     
       my @fruits = ('apple', 'banana', 'orange', 'pear', 'peach');
