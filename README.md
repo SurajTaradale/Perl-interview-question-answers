@@ -76,6 +76,34 @@ Our Perl interview question and answer repository is a comprehensive collection 
       <th >17</th>
       <td><a href="#que17">How can you delete the last character from all the elements in an array in Perl?</a></td>
     </tr>
+    <tr>
+      <th >18</th>
+      <td><a href="#que18">How can you delete the last character from all the value in an hash in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >19</th>
+      <td><a href="#que19">How do you find the factorial of a number using for loop, while loop, and recursion in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >20</th>
+      <td><a href="#que20">How can you create a Fibonacci series using for loop, while loop, and recursion in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >21</th>
+      <td><a href="#que21">How do you check whether a number is a prime number or not in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >22</th>
+      <td><a href="#que22">How can you find the largest element in an array in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >23</th>
+      <td><a href="#que23">Sum of all numbers in array</a></td>
+    </tr>
+    <tr>
+      <th >24</th>
+      <td><a href="#que24">How do you reverse a given string in Perl?</a></td>
+    </tr>
     </tbody>
 </table>
 <div class="common" id="que1" >
@@ -583,5 +611,206 @@ Our Perl interview question and answer repository is a comprehensive collection 
   print "@array\n"; #output: appl banan cherr
   
   ```
-  <p>In the above example deleted all the last letters.
+  <p>In the above example deleted all the last letters.</p>
+</div>
+<div class="common" id="que18" >
+<h3>18. How can you delete the last character from all the value in an hash in Perl?</h3>
+  
+  ```
+  my %hash = ( one => "one", two => "two", three => "three");
+  chop(%hash); #output: (one => "on", two => "tw", three => "thre");
+  
+  ```
+<p>In the above example deleted all the last letters.</p>
+
+</div>
+
+<div class="common" id="que19" >
+<h3>19. How do you find the factorial of a number using for loop, while loop, and recursion in Perl?</h3>
+
+<p>Using for loop</p>
+  
+  ```
+  use strict;
+  use warnings;
+
+
+  my $num = 6;
+  my $result = 1;
+
+  foreach (1..$num) {
+    $result = $_ * $result;
+  }
+
+  print " using for loop = $result\n"; #output : using for loop = 720
+  
+  ```
+<p>Using while loop</p>
+
+ ```
+  use strict;
+  use warnings;
+
+  my $num = 6;
+  my $result = 1;
+  my $count = 1;
+  while ($count <= $num) {
+    $result = $count * $result;
+    $count++;
+  }
+
+  print "using while loop = $result\n"; #output : using while loop = 720
+
+ ```
+
+<p>Using recursive loop</p>
+
+  ```
+  use strict;
+  use warnings;
+
+  my $num = 6;
+  sub fact {
+  my $x = $_[0];
+  if ($x == 0 || $x == 1) {
+      return 1;
+    } else {
+      return $x * fact($x - 1);
+    }
+  }
+
+  print "using recursive = ".fact($num)."\n";
+
+  ```
+</div>
+<div class="common" id="que20" >
+<h3>20. How can you create a Fibonacci series using for loop and recursion in Perl?</h3>
+<p>Using for loop</p>
+
+  ```
+  use strict;
+  use warnings;
+
+  my $num = 10;
+  my $n1 = 0;
+  my $n2 = 1;
+  my $n3;
+
+  print "$n1\n";
+  print "$n2\n";
+  foreach(2..$num) {
+    $n3 = $n1 + $n2;
+    print "$n3\n";
+    $n1 = $n2;
+    $n2 = $n3;
+  }
+  ```
+
+<p>Using recursion</p>
+
+  ```
+  use strict;
+  use warnings;
+
+  my $num = 10;
+  my $n1 = 0;
+  my $n2 = 1;
+  my $n3;
+  print "$n1\n";
+  print "$n2\n";
+  my $count = 2;
+  sub fib {
+    my ($n1, $n2, $n3) = @_;
+    $n3 = $n2 + $n1;
+    print "$n3\n";
+    $n1 = $n2;
+    $n2 = $n3;
+    if ($count >= $num) {
+      return;
+    }else{
+      $count++;
+      fib($n1,$n2,$n3);
+    }
+  }
+  fib($n1,$n2,$n3);
+  ```
+</div>
+<div class="common" id="que21" >
+<h3>21. How do you check whether a number is a prime number or not in Perl?</h3>
+
+   ```
+  use strict;
+  use warnings;
+
+  sub Check_prime {
+    my $num = shift;
+    return 0 if $num <= 1;
+    foreach (2..sqrt($num)) {
+      return 0 if $num % $_ == 0;   
+    }
+    return 1;
+  }
+
+  if (Check_prime(13)) {
+    print "is prime number\n";
+  }else{
+    print "is not prime number\n"
+  }
+
+   ```
+
+</div>
+<div class="common" id="que22" >
+<h3>22. How can you find the largest element in an array in Perl?</h3>
+
+   ```
+  use strict;
+  use warnings;
+
+  my @number = (54,65,21,53,98,47,26,35);
+  my $result = 0;
+  foreach(@number){
+      if($result < $_){
+          $result = $_;
+      }
+  }
+
+  print "$result\n";
+
+   ```
+
+</div>
+<div class="common" id="que23" >
+<h3>23. Sum of all numbers in array</h3>
+
+   ```
+  use strict;
+  use warnings;
+
+  my @number = (54,65,21,53,98,47,26,35);
+  my $result = 0;
+  foreach(@number){
+      $result += $_;
+  }
+
+  print "$result\n";
+
+   ```
+
+</div>
+<div class="common" id="que24" >
+<h3>24. How do you reverse a given string in Perl?</h3>
+
+   ```
+  my $str = "Suraj";
+  my $res;
+  my @arrStr = split('',$str);
+  
+  for (my $var = $#arrStr; $var >= 0; $var--) {
+    $res .= $arrStr[$var];
+  }
+  print "$res\n";
+
+   ```
+
 </div>
