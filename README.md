@@ -104,6 +104,22 @@ Our Perl interview question and answer repository is a comprehensive collection 
       <th >24</th>
       <td><a href="#que24">How do you reverse a given string in Perl?</a></td>
     </tr>
+    <tr>
+      <th >25</th>
+      <td><a href="#que25">Remove the duplicate element from array</a></td>
+    </tr>
+    <tr>
+      <th >26</th>
+      <td><a href="#que26">Missing element in the array</a></td>
+    </tr>
+    <tr>
+      <th >27</th>
+      <td><a href="#que27">Print the number 1 to 100 without using a loops</a></td>
+    </tr>
+    <tr>
+      <th >28</th>
+      <td><a href="#que28">Swap a variable without using the temporary variable</a></td>
+    </tr>
     </tbody>
 </table>
 <div class="common" id="que1" >
@@ -810,6 +826,93 @@ Our Perl interview question and answer repository is a comprehensive collection 
     $res .= $arrStr[$var];
   }
   print "$res\n";
+
+   ```
+
+</div>
+<div class="common" id="que25" >
+<h3>25. Remove the duplicate element from array</h3>
+
+   ```
+  use strict;
+  use warnings;
+
+  my @array = (1,85,54,1,55,85,65,52,54);
+  my @result;
+  my %hash;
+  foreach(@array){
+      if(!$hash{$_}){
+          $hash{$_} = $_;
+          push(@result,$_);
+      }
+  }
+  print "@result\n";
+
+   ```
+
+</div>
+<div class="common" id="que26" >
+<h3>26. Missing element in the array</h3>
+
+   ```
+    use strict;
+    use warnings;
+
+    my @array = (1,2,3,4,5,7,8,9);
+    my %hash;
+
+    foreach(@array){
+        $hash{$_} = 1;
+    }
+
+    for(my $i = 1; $i <= $#array + 1; $i++){
+        if(!$hash{$i}){
+            print "Missing element is $i\n";
+        }
+    }
+
+   ```
+
+</div>
+<div class="common" id="que27" >
+<h3>27. Missing element in the array</h3>
+
+   ```
+    use strict;
+    use warnings;
+
+    my $num = 100;
+
+    sub Print_num {
+        my ($start, $end) = @_;
+        if($start <= $end){
+            print "$start\n";
+            Print_num($start + 1, $end);
+        }
+    }
+    Print_num(1, $num);
+
+   ```
+
+</div>
+<div class="common" id="que28" >
+<h3>28. Swap a variable without using the temporary variable</h3>
+
+   ```
+  use strict;
+  use warnings;
+
+  my $num1 = 10;
+  my $num2 = 20;
+
+  # Before swaping
+  print "Before swaping => $num1 , $num2 \n";
+
+  ($num1, $num2) = ($num2, $num1);
+
+  #After swaping
+
+  print "After swaping => $num1 , $num2 \n";
 
    ```
 
