@@ -120,6 +120,14 @@ Our Perl interview question and answer repository is a comprehensive collection 
       <th >28</th>
       <td><a href="#que28">Swap a variable without using the temporary variable</a></td>
     </tr>
+    <tr>
+      <th >29</th>
+      <td><a href="#que29">Sort an array using bubble sort in Perl</a></td>
+    </tr>
+    <tr>
+      <th >30</th>
+      <td><a href="#que30">Sort an array using quick sort in Perl</a></td>
+    </tr>
     </tbody>
 </table>
 <div class="common" id="que1" >
@@ -913,6 +921,51 @@ Our Perl interview question and answer repository is a comprehensive collection 
   #After swaping
 
   print "After swaping => $num1 , $num2 \n";
+
+   ```
+
+</div>
+<div class="common" id="que29" >
+<h3>29. Sort an array using bubble sort in Perl</h3>
+
+   ```
+  use strict;
+  use warnings;
+  
+  my @Number = (84,52,95,35,42,18,5,73,24,0,9);
+  
+  for(my $i = 0; $i<= $#Number; $i++){
+      for(my $j = 0; $j < $#Number - $i; $j++){
+          if($Number[$j + 1] < $Number[$j]){
+              ($Number[$j], $Number[$j + 1]) = ($Number[$j + 1], $Number[$j])
+          }
+      }
+  }
+  
+  print "@Number\n";
+
+   ```
+
+</div>
+<div class="common" id="que30" >
+<h3>30. Sort an array using quick sort in Perl</h3>
+
+   ```
+    use strict;
+    use warnings;
+  
+    my @Number = (84,52,95,35,42,18,5,73,24,0,9,6);
+  
+    sub Sort_number {
+        my @arr = @_;
+        return @arr if @arr < 2;
+        my $p = pop(@arr);
+        return Sort_number(grep{ $_ < $p } @arr),$p,Sort_number(grep{ $_ > $p } @arr)
+    }
+    
+    my @Result = Sort_number(@Number);
+    
+    print "@Result\n";
 
    ```
 
