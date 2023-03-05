@@ -82,51 +82,91 @@ Our Perl interview question and answer repository is a comprehensive collection 
     </tr>
     <tr>
       <th >19</th>
-      <td><a href="#que19">How do you find the factorial of a number using for loop, while loop, and recursion in Perl?</a></td>
+      <td><a href="#que18.1">How to create a reference array in Perl?</a></td>
     </tr>
     <tr>
       <th >20</th>
-      <td><a href="#que20">How can you create a Fibonacci series using for loop, while loop, and recursion in Perl?</a></td>
+      <td><a href="#que18.2">How to create a reference hash in Perl?</a></td>
     </tr>
     <tr>
       <th >21</th>
-      <td><a href="#que21">How do you check whether a number is a prime number or not in Perl?</a></td>
+      <td><a href="#que18.3">How to convert a dereferenced array into a reference array in Perl?</a></td>
     </tr>
     <tr>
       <th >22</th>
-      <td><a href="#que22">How can you find the largest element in an array in Perl?</a></td>
+      <td><a href="#que18.4">How to convert a dereferenced hash into a reference hash in Perl?</a></td>
     </tr>
     <tr>
       <th >23</th>
-      <td><a href="#que23">Sum of all numbers in array</a></td>
+      <td><a href="#que18.5">How to access a value from a referenced array in Perl?</a></td>
     </tr>
     <tr>
       <th >24</th>
-      <td><a href="#que24">How do you reverse a given string in Perl?</a></td>
+      <td><a href="#que18.6">How to access a value from a referenced hash in Perl?</a></td>
     </tr>
     <tr>
       <th >25</th>
-      <td><a href="#que25">Remove the duplicate element from array</a></td>
+      <td><a href="#que18.7">What is the difference between "use" and "require" in Perl?</a></td>
     </tr>
     <tr>
       <th >26</th>
-      <td><a href="#que26">Missing element in the array</a></td>
+      <td><a href="#que18.8">What are the file operations available in Perl?</a></td>
     </tr>
     <tr>
       <th >27</th>
-      <td><a href="#que27">Print the number 1 to 100 without using a loops</a></td>
+      <td><a href="#que19">How do you find the factorial of a number using for loop, while loop, and recursion in Perl?</a></td>
     </tr>
     <tr>
       <th >28</th>
-      <td><a href="#que28">Swap a variable without using the temporary variable</a></td>
+      <td><a href="#que20">How can you create a Fibonacci series using for loop, while loop, and recursion in Perl?</a></td>
     </tr>
     <tr>
       <th >29</th>
-      <td><a href="#que29">Sort an array using bubble sort in Perl</a></td>
+      <td><a href="#que21">How do you check whether a number is a prime number or not in Perl?</a></td>
     </tr>
     <tr>
       <th >30</th>
+      <td><a href="#que22">How can you find the largest element in an array in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >31</th>
+      <td><a href="#que23">Sum of all numbers in array</a></td>
+    </tr>
+    <tr>
+      <th >32</th>
+      <td><a href="#que24">How do you reverse a given string in Perl?</a></td>
+    </tr>
+    <tr>
+      <th >33</th>
+      <td><a href="#que25">Remove the duplicate element from array</a></td>
+    </tr>
+    <tr>
+      <th >34</th>
+      <td><a href="#que26">Missing element in the array</a></td>
+    </tr>
+    <tr>
+      <th >35</th>
+      <td><a href="#que27">Print the number 1 to 100 without using a loops</a></td>
+    </tr>
+    <tr>
+      <th >36</th>
+      <td><a href="#que28">Swap a variable without using the temporary variable</a></td>
+    </tr>
+    <tr>
+      <th >37</th>
+      <td><a href="#que29">Sort an array using bubble sort in Perl</a></td>
+    </tr>
+    <tr>
+      <th >38</th>
       <td><a href="#que30">Sort an array using quick sort in Perl</a></td>
+    </tr>
+    <tr>
+      <th >39</th>
+      <td><a href="#que31">Find the value from the given array using linear search.</a></td>
+    </tr>
+    <tr>
+      <th >40</th>
+      <td><a href="#que32">Find the value from the given array using binary search.</a></td>
     </tr>
     </tbody>
 </table>
@@ -648,9 +688,163 @@ Our Perl interview question and answer repository is a comprehensive collection 
 <p>In the above example deleted all the last letters.</p>
 
 </div>
+<div class="common" id="que18.1" >
+<h3>19. How to create a reference array in Perl?</h3>
+<p>Using square brackets to enclose the array elements creates an array reference in Perl.</p>
+  
+  ```
+  my $ref_array = [1,2,3,4,5];
+  
+  ```
+
+</div>
+<div class="common" id="que18.2" >
+<h3>20. How to create a reference hash in Perl?</h3>
+<p>Using square brackets to enclose the hash elements creates an array reference in Perl.</p>
+  
+  ```
+  my $ref_hash = {one => "one", two => "two", three => "three"};
+  
+  ```
+
+</div>
+<div class="common" id="que18.3" >
+<h3>21. How to convert a dereferenced array into a reference array in Perl?</h3>
+
+  ```
+  my @my_array = (1, 2, 3);
+  my $array_ref = \@my_array;  # create a reference to @my_array
+
+  # dereference the array reference to get the original array
+  my @dereferenced_array = @{$array_ref};
+
+  # convert the dereferenced array back into a reference array
+  my $reference_array = \@dereferenced_array;
+    
+  ```
+
+</div>
+<div class="common" id="que18.4" >
+<h3>22. How to convert a dereferenced hash into a reference hash in Perl?</h3>
+
+  ```
+  my %my_hash = ('key1' => 'value1', 'key2' => 'value2');
+  my $hash_ref = \%my_hash;  # create a reference to %my_hash
+
+  # dereference the hash reference to get the original hash
+  my %dereferenced_hash = %{$hash_ref};
+
+  # convert the dereferenced hash back into a reference hash
+  my $reference_hash = \%dereferenced_hash;
+    
+  ```
+</div>
+<div class="common" id="que18.5" >
+<h3>23. How to access a value from a referenced array in Perl?</h3>
+
+  ```
+  my $array_ref = [1, 2, 3];  # create a reference to an anonymous array
+
+  # access the second element of the array using the arrow operator
+  my $Value1 = $array_ref->[1];
+
+  print $Value1;  # Output: 2
+
+  # access the second element of the array using the @{ } syntax
+  my $Value2 = @{$array_ref}[1];
+
+  print $Value2;  # Output: 2
+
+  #access all values using loop
+
+  foreach(@{$array_ref}){
+    print "value = $_ \n";
+  }
+
+  ```
+</div>
+<div class="common" id="que18.6" >
+<h3>24. How to access a value from a referenced hash in Perl?</h3>
+
+  ```
+  my $hash_ref = {'key1' => 'value1', 'key2' => 'value2'};  # create a reference to an anonymous hash
+
+  # access the value associated with 'key2' using the arrow operator
+  my $value = $hash_ref->{'key2'};
+
+  print $value;  # Output: value2
+
+  # access the value associated with 'key2' using the %{ } syntax
+  my $value1 = ${$hash_ref}{'key2'};
+
+  print $value1;  # Output: value2
+
+  #access all values using loop
+  my %temp_hash = %{$hash_ref};
+  foreach(keys %temp_hash){
+    print "key = $_, value = $temp_hash{$_}\n";
+  }
+
+  ```
+</div>
+<div class="common" id="que18.7" >
+<h3>25. What is the difference between "use" and "require" in Perl?</h3>
+<p>In Perl, both use and require are used to load external modules into your program. However, there are some differences between the two:</p>
+<ol>
+  <li>`use` is a compile-time directive, while `require` is a runtime directive. This means that when you use `use` in your program, the module is loaded and processed at compile time, before the rest of the program is executed. On the other hand, when you use `require`, the module is loaded and processed at runtime, when the require statement is executed.</li>
+  <li>`use` is automatically invoked at the beginning of the program, whereas `require` is used when you need to load a module at a specific point in your program.</li>
+  <li>`use` automatically calls the `import` function of the module, which can be used to import specific functions or variables from the module into your program's namespace. `require`, on the other hand, does not automatically call the `import` function and does not provide a way to import specific functions or variables from the module.</li>
+  <li>If a module loaded using `use` fails to load, it will cause a fatal error and terminate the program. On the other hand, if a module loaded using `require` fails to load, it will issue a warning message, but the program will continue to run.</li>
+</ol>
+  
+</div>
+<div class="common" id="que18.8" >
+<h3>26. What are the file operations available in Perl?</h3>
+<table>
+  <thead>
+    <th>No</th>
+    <th>Syntax</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>< or r</td>
+      <td>Read Only Access</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>> or w</td>
+      <td>Creates, Writes, and Truncates</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>>> or a</td>
+      <td>Writes, Appends, and Creates</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>+< or r+</td>
+      <td>Reads and Writes</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>+> or w+</td>
+      <td>Reads, Writes, Creates, and Truncates</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>+>> or a+</td>
+      <td>Reads, Writes, Appends, and Creates</td>
+    </tr>
+
+  </tbody>
+</table>
+  
+</div>
 
 <div class="common" id="que19" >
-<h3>19. How do you find the factorial of a number using for loop, while loop, and recursion in Perl?</h3>
+<h3>27. How do you find the factorial of a number using for loop, while loop, and recursion in Perl?</h3>
 
 <p>Using for loop</p>
   
@@ -708,7 +902,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
   ```
 </div>
 <div class="common" id="que20" >
-<h3>20. How can you create a Fibonacci series using for loop and recursion in Perl?</h3>
+<h3>28. How can you create a Fibonacci series using for loop and recursion in Perl?</h3>
 <p>Using for loop</p>
 
   ```
@@ -760,7 +954,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
   ```
 </div>
 <div class="common" id="que21" >
-<h3>21. How do you check whether a number is a prime number or not in Perl?</h3>
+<h3>29. How do you check whether a number is a prime number or not in Perl?</h3>
 
    ```
   use strict;
@@ -785,7 +979,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
 </div>
 <div class="common" id="que22" >
-<h3>22. How can you find the largest element in an array in Perl?</h3>
+<h3>30. How can you find the largest element in an array in Perl?</h3>
 
    ```
   use strict;
@@ -805,7 +999,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
 </div>
 <div class="common" id="que23" >
-<h3>23. Sum of all numbers in array</h3>
+<h3>31. Sum of all numbers in array</h3>
 
    ```
   use strict;
@@ -823,7 +1017,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
 </div>
 <div class="common" id="que24" >
-<h3>24. How do you reverse a given string in Perl?</h3>
+<h3>32. How do you reverse a given string in Perl?</h3>
 
    ```
   my $str = "Suraj";
@@ -839,7 +1033,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
 </div>
 <div class="common" id="que25" >
-<h3>25. Remove the duplicate element from array</h3>
+<h3>33. Remove the duplicate element from array</h3>
 
    ```
   use strict;
@@ -860,7 +1054,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
 </div>
 <div class="common" id="que26" >
-<h3>26. Missing element in the array</h3>
+<h3>34. Missing element in the array</h3>
 
    ```
     use strict;
@@ -883,7 +1077,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
 </div>
 <div class="common" id="que27" >
-<h3>27. Missing element in the array</h3>
+<h3>35. Missing element in the array</h3>
 
    ```
     use strict;
@@ -904,7 +1098,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
 </div>
 <div class="common" id="que28" >
-<h3>28. Swap a variable without using the temporary variable</h3>
+<h3>36. Swap a variable without using the temporary variable</h3>
 
    ```
   use strict;
@@ -926,7 +1120,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
 </div>
 <div class="common" id="que29" >
-<h3>29. Sort an array using bubble sort in Perl</h3>
+<h3>37. Sort an array using bubble sort in Perl</h3>
 
    ```
   use strict;
@@ -948,7 +1142,7 @@ Our Perl interview question and answer repository is a comprehensive collection 
 
 </div>
 <div class="common" id="que30" >
-<h3>30. Sort an array using quick sort in Perl</h3>
+<h3>38. Sort an array using quick sort in Perl</h3>
 
    ```
     use strict;
@@ -966,6 +1160,68 @@ Our Perl interview question and answer repository is a comprehensive collection 
     my @Result = Sort_number(@Number);
     
     print "@Result\n";
+
+   ```
+
+</div>
+<div class="common" id="que31" >
+<h3>39. Find the value from the given array using linear search.</h3>
+
+   ```
+    use strict;
+    use warnings;
+  
+    my @Number = (84,52,95,35,42,18,5,73,24,0,9,6);
+    my $num = 73;
+    my $Result;
+    foreach(@Number){
+        if($_ == $num){
+            $Result = $_;
+            last;
+        }
+    }
+    
+    if($Result){
+        print "Value is present\n";
+    }else{
+        print "value is not present\n";
+    }
+
+   ```
+
+</div>
+<div class="common" id="que32" >
+<h3>40. Find the value from the given array using binary search.</h3>
+
+   ```
+    use strict;
+    use warnings;
+  
+    my @Number = qw(0 5 6 9 18 24 35 42 52 73 84 95);
+  
+    sub binary_search{
+        my ($num, $list) = @_;
+        my $low = 0;
+        my $high = @{$list} + 1;
+        while($low <= $high){
+            my $mid = int(($low + $high)/2);
+            if($num < $list->[$mid]){
+                $high = $mid - 1;
+                next;
+            }
+            if($num > $list->[$mid]){
+                $low = $mid + 1;
+                next;
+            }
+            return $mid;
+        }
+    }
+    
+    if(binary_search(42, \@Number)){
+        print "Value is present\n";
+    }else{
+        print "Value is not present\n";
+    }
 
    ```
 
